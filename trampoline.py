@@ -37,7 +37,7 @@ def __load_lldb_file(file_path):
 
   if os.path.isfile(file_path):
     print('** Found **')
-    lldb.debugger.HandleCommand('command source {}'.format(file_path))
+    lldb.debugger.HandleCommand('command source -s true {}'.format(file_path))
   else:
     print('** Not found **')
 
