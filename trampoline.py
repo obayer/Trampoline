@@ -50,7 +50,7 @@ def __resolve_file_paths(target, search_path):
 
 def __architecture(target):
   """Returns architecture for current active target, e.g. i386, x86_64, armv7"""
-  return target.GetPlatform().GetTriple().split('-', 1)[0]
+  return target.module_iter().next().GetTriple().split('-', 1)[0]
 
 def __executable_name(target):
   """Returns the filename of the current target"""
