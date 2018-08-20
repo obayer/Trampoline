@@ -8,7 +8,7 @@ import os.path
 lldb_init_search_path = "~/.lldb"
 
 def __lldb_init_module(debugger, internal_dict):
-  debugger.HandleCommand('br set -F "main" -D -o')
+  debugger.HandleCommand('br set -F "main" -o true')
   debugger.HandleCommand('br command add -s python 1 -o "trampoline.__breakpoint_callback()"')
 
   file_path = os.path.realpath(__file__)
