@@ -20,6 +20,8 @@ Copy the `trampoline.py` file somewhere onto your machine and insert into your `
 command script import /path/to/your/trampoline.py
 ```
 
+### Search path
+Per default, `Trampoline` is searching for `*.lldb` files within the directory where `trampoline.py` is located.
 To change the `search path` insert into your `/.lldbinit` file following line:
 ```Python
 # ~/.lldbinit
