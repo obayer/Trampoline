@@ -20,10 +20,25 @@ Copy the `trampoline.py` file somewhere onto your machine and insert into your `
 command script import /path/to/your/trampoline.py
 ```
 
-### Search path
+## Search path
 Per default, `Trampoline` is searching for `*.lldb` files within the directory where `trampoline.py` is located.
 To change the `search path` insert into your `/.lldbinit` file following line:
 ```Python
 # ~/.lldbinit
-script trampoline.set_search_path('~/your/new/search/path/lldb')
+script trampoline.lldb_files_search_path = '~/your/new/search/path/lldb'
 ```
+
+## Disable automatic `*.lldb` file loading
+Currently there seems to be a bug within `lldb` which prevents `Trampolines` automatic execution on startup, if `lldb` is run via terminal, if executed in Xcode everything works as usual.  
+To temporarily bypass this unexpected behaviour you can disable automatically loading of `.lldb` files via
+```Python
+# ~/.lldbinit
+script trampoline.disable_automatic_load = True
+```
+
+## Commands
+
+Commands avaiable after enabling `Trampoline`.
+
+### `tr_load`
+To manually load `*.lldb` files during a lldb debug session, you can enter `tr_load` into your lldb command line interpreter, which loads the desired `*.lldb` files as described in [File name scheme](#file-name-scheme).
