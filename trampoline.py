@@ -56,7 +56,7 @@ def _resolve_file_paths(target, search_path):
 
 def _architecture(target):
   """Returns architecture for current active target, e.g. i386, x86_64, armv7"""
-  return target.module_iter().next().GetTriple().split('-', 1)[0]
+  return target.GetTriple().split('-', 1)[0]
 
 def _plattform(target):
   """Returns plattform for current active target, e.g. apple-macosx10.10.0"""
